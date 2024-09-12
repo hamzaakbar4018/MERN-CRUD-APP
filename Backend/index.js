@@ -21,5 +21,8 @@ mongoose.connect(URL)
 }).catch((e)=>{
     console.log("Error in connecting DB :", e);
 })
+app.get('/',(req,res)=>{
+    res.send("Hello...")
+})
 app.use("/api",route)
 
