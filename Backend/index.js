@@ -5,7 +5,10 @@ import cors from 'cors';
 import route from './routes/user.route.js';
 const app = express();
 app.use(express.json())
-app.use(cors());
+app.use(cors({
+    origin : ['https://mern-crud-app-frontend-cyan.vercel.app/']
+
+}));
 dotenv.config();
 const URL = process.env.URL;
 const PORT = process.env.PORT || 4000;
