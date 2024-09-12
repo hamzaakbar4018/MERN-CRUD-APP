@@ -20,7 +20,7 @@ const AddUser = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:3000/api/create', formData)
+    axios.post('https://mern-crud-app-api-five.vercel.app/api/create', formData)
       .then(response => {
         console.log("Form Data Submitted:", formData);
         console.log("Response from server:", response.data);
