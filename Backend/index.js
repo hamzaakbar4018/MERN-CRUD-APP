@@ -15,14 +15,14 @@ const PORT = process.env.PORT || 4000;
 mongoose.connect(URL)
 .then(()=>{
     console.log("Connected to MongoDB")
-    app.listen(PORT,()=>{
-        console.log(`Server is running on port ${PORT}`)
-    })
 }).catch((e)=>{
     console.log("Error in connecting DB :", e);
 })
 app.get('/',(req,res)=>{
     res.send("Hello...")
+})
+app.listen(PORT,()=>{
+    console.log(`Server is running on port ${PORT}`)
 })
 app.use("/api",route)
 
