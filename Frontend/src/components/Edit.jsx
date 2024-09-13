@@ -12,8 +12,8 @@ const Edit = () => {
     password: ""
   });
 
-  useEffect(() => {
-    axios.get(`https://mern-crud-app-api-five.vercel.app/api/get/${id}`)
+   useEffect(() => {
+    axios.get(`http://localhost:3000/api/getone/${id}`)
       .then(response => {
         setFormData(response.data);
       })
@@ -32,7 +32,7 @@ const Edit = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.put(`https://mern-crud-app-api-five.vercel.app/api/update/${id}`, formData)
+    axios.put(`http://localhost:3000/api/update/${id}`, formData)
       .then(response => {
         console.log("Form Data Submitted:", formData);
         console.log("Response from server:", response.data);

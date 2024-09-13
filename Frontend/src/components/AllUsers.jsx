@@ -10,8 +10,8 @@ function AllUsers() {
     fetchData();
   }, []);
 
-  const fetchData = () => {
-    axios.get("https://mern-crud-app-api-five.vercel.app/api/getall")
+   const fetchData = () => {
+    axios.get("http://localhost:3000/api/getall")
       .then(response => {
         console.log('API Response:', response.data);
         setData(response.data.getall);
@@ -22,10 +22,9 @@ function AllUsers() {
   };
 
   const handleDelete = (id) => {
-    axios.delete(`https://mern-crud-app-api-five.vercel.app/api/delete/${id}`)
+    axios.delete(`http://localhost:3000/api/delete/${id}`)
       .then(response => {
         console.log('Delete Response:', response.data);
-        // Remove the deleted item from the state
         setData(data.filter(item => item._id !== id));
       })
       .catch(error => {
